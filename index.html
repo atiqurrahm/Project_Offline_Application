@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <title>App: Home</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="scripts/functions.js"></script>
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+    <script>
+        $(()=> {
+            createTables();
+            if(checkLogin()){
+                $('#login-item').hide();
+                $('#register-item').hide();
+                $("#count").html(getCartItemCount());
+            }
+            else
+            {
+                $('#login-item').show();
+                $('#register-item').show();
+               
+                
+            }
+        });
+        
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar navbar-dark bg-primary fixed-top shadow-sm">
+        <div class="container-fluid">
+            <span class="navbar-brand">Shop<sup>24</sup></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="product.html" class="nav-link">Browse & Buy</a></li>
+                </ul>
+               
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="cart.html" class="nav-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span id="count">0</span> items</a></li>
+                    <li class="nav-item" id="login-item"><a href="login.html" class="nav-link">Sign in</a></li>
+                    
+                    <li class="nav-item" id="register-item"><a href="register.html" class="nav-link">Register</a></li>
+                    <li class="nav-item"><a href="admin.html" class="nav-link" id="">Admin</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        
+        <div class="card text-bg-secondary mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Shop<sup>24</sup></h5>
+                <h6 class="card-subtitle">offline storage-based application</h6>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Main features</h5>
+              <ul>
+                <li>sessonStatorage & localStorage</li>
+                <li>WebSql browser feature</li>
+                <li>JavaScript Promise</li>
+            </ul>
+            <p class="card-text">For admin panel use password</p>
+            </div>
+          </div>
+    </div>
+    <footer class="container">
+        <p>&copy; 2022</p>
+    </footer>
+</body>
+</html>
